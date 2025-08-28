@@ -6,7 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>vCard - Personal Portfolio</title>
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your Public Key (do this once at page load)
+    (function() {
+      emailjs.init("kDoNAFZjCvQBPO8hi"); // Your public key
+    })();
+  </script>
   <!--
     - favicon
   -->
@@ -909,24 +916,31 @@
           </figure>
         </section>
 
-        <section class="contact-form">
+       <section class="contact-form">
+  <h3 class="h3 form-title">Contact Form</h3>
 
-          <h3 class="h3 form-title">Contact Form</h3>
-<!-- In your contact form section, update the form element -->
-          <form id="contact-form" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+  <form id="contact-form" class="form" data-form>
+  <div class="input-wrapper">
+    <input type="text" name="from_name" class="form-input" placeholder="Full name" required data-form-input>
+    <input type="email" name="from_email" class="form-input" placeholder="Email address" required data-form-input>
+  </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-            <div id="form-status" style="margin-top: 15px; display: none;"></div>
-          </form>
-        </section>
+  <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+  <!-- Hidden field for recipient (must match your EmailJS template variable) -->
+  <input type="hidden" name="to_email" value="nmikhilsai@gmail.com">
+
+  <button class="form-btn" type="submit" data-form-btn>
+    <ion-icon name="paper-plane"></ion-icon>
+    <span>Send Message</span>
+  </button>
+
+  <div id="form-status" style="margin-top: 15px; display: none;"></div>
+</form>
+
+</section>
+
+
 
       </article>
 
@@ -949,6 +963,8 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 
 </body>
 
